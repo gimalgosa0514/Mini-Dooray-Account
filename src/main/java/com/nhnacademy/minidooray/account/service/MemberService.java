@@ -17,13 +17,17 @@ public class MemberService {
         this.memberRepository=memberRepository;
     }
 
-    public Member doLogin(LoginDto dto){
-        Optional<Member> optional=memberRepository.findById(dto.getId());
-        if(optional.isEmpty()){
+    public Member getMember(String memberId){
+        Optional<Member> member=memberRepository.findById(memberId);
+        if(member.isEmpty()){
             throw new MemberNotFoundException("Member is Not found");
         }
 
-        Member member=optional.get();
+        return member.get();
+    }
+
+    public Member doLogin(LoginDto dto){
+        Member member=getMember(dto.getId());
         if(!member.getMemberPassword().equals(dto.getPassword())){
             throw new LoginFailedException("Login failed.");
         }
