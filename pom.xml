@@ -8,10 +8,10 @@
 		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>be.gyu.nhnacademy</groupId>
-	<artifactId>jpa_final</artifactId>
+	<groupId>com.nhnacademy.minidooray</groupId>
+	<artifactId>account</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jpa_final</name>
+	<name>account</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

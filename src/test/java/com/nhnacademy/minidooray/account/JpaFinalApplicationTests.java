@@ -1,4 +1,4 @@
-package be.gyu.nhnacademy.jpa_final;
+package com.nhnacademy.minidooray.account;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

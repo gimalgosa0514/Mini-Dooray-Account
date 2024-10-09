@@ -1,13 +1,12 @@
-package be.gyu.nhnacademy.jpa_final;
+package com.nhnacademy.minidooray.account;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JpaFinalApplication {
+public class AccountApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpaFinalApplication.class, args);
+		SpringApplication.run(AccountApplication.class, args);
 	}
-
 }
