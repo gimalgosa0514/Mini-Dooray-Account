@@ -1,6 +1,7 @@
 package com.nhnacademy.minidooray.account.service;
 
 import com.nhnacademy.minidooray.account.dto.LoginDto;
+import com.nhnacademy.minidooray.account.dto.MemberDto;
 import com.nhnacademy.minidooray.account.entity.Member;
 import com.nhnacademy.minidooray.account.exception.LoginFailedException;
 import com.nhnacademy.minidooray.account.exception.MemberNotFoundException;
@@ -35,6 +36,9 @@ public class MemberService {
         return member;
     }
 
-    // TODO: 회원가입
+    public void registerMember(MemberDto dto){
+        Member member=new Member(dto.getId(),dto.getPassword(),dto.getEmail());
+        memberRepository.save(member);
+    }
 
 }
