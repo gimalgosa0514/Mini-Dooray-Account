@@ -18,17 +18,27 @@ public class MemberService {
         this.memberRepository=memberRepository;
     }
 
-    public Member getMember(String memberId){
-        Optional<Member> member=memberRepository.findById(memberId);
-        if(member.isEmpty()){
+    public MemberDto getMember(String memberId){
+        Optional<Member> optional=memberRepository.findById(memberId);
+        if(optional.isEmpty()){
             throw new MemberNotFoundException("Member is Not found");
         }
 
-        return member.get();
+        Member member=optional.get();
+        MemberDto dto=new MemberDto();
+        dto.setId(member.getMemberId());
+        dto.setPassword(member.getMemberPassword());
+        dto.setEmail(member.getMemberEmail());
+        return dto;
     }
 
     public Member doLogin(LoginDto dto){
-        Member member=getMember(dto.getId());
+        Optional<Member> optional=memberRepository.findById(dto.getId());
+        if(optional.isEmpty()){
+            throw new MemberNotFoundException("Member is Not found.");
+        }
+
+        Member member=optional.get();
         if(!member.getMemberPassword().equals(dto.getPassword())){
             throw new LoginFailedException("Login failed.");
         }

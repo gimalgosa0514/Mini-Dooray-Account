@@ -1,7 +1,6 @@
 package com.nhnacademy.minidooray.account.controller;
 
 import com.nhnacademy.minidooray.account.dto.MemberDto;
-import com.nhnacademy.minidooray.account.entity.Member;
 import com.nhnacademy.minidooray.account.service.MemberService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +15,7 @@ public class MemberController {
     }
 
     @GetMapping("/member/{memberId}")
-    public ResponseEntity<Member> getMember(@PathVariable String memberId){
+    public ResponseEntity<MemberDto> getMember(@PathVariable String memberId){
         return new ResponseEntity<>(memberService.getMember(memberId),HttpStatus.OK);
     }
 
