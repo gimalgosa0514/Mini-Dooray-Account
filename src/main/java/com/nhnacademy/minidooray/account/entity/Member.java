@@ -1,6 +1,8 @@
 package com.nhnacademy.minidooray.account.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,4 +17,7 @@ public class Member {
     private String memberId;
     private String memberPassword;
     private String memberEmail;
+
+    @Enumerated(EnumType.STRING)
+    private MemberStatus memberStatus;
 }
