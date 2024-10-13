@@ -17,12 +17,12 @@ public class MemberController {
         this.memberService=memberService;
     }
 
-    @GetMapping("/member/{memberId}")
+    @GetMapping("/api/member/{memberId}")
     public ResponseEntity<MemberDto> getMember(@PathVariable String memberId){
         return new ResponseEntity<>(memberService.getMember(memberId),HttpStatus.OK);
     }
 
-    @PostMapping("/member")
+    @PostMapping("/api/member")
     public ResponseEntity<MessageDto> registerMember(@RequestBody MemberDto dto){
         memberService.registerMember(dto);
 
